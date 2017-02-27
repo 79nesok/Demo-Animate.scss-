@@ -1,0 +1,99 @@
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+	border: 1px solid;
+	border-color: $color__border-button;
+	border-radius: 3px;
+	background: $color__background-button;
+	color: rgba(0, 0, 0, .8);
+	@include font-size(0.75);
+	line-height: 1;
+	padding: .6em 1em .4em;
+
+	&:hover {
+		border-color: $color__border-button-hover;
+	}
+
+	&:active,
+	&:focus {
+		border-color: $color__border-button-focus;
+	}
+}
+
+
+//nucleus
+$spike-size: 10px;
+
+.hex-btn {
+  text-decoration: none;
+  position: relative;
+  display: inline-block;
+  margin:0 $spike-size;
+  padding: 8px 12px;
+  &::after{ 
+    left: 100%;
+  }
+  &::before{ 
+    right: 100%;
+  }
+}
+
+.hex-btn::after,
+.hex-btn::before {
+  position:absolute;
+  content: "";
+  height: 0px;
+  width: 0px;
+  top: 0;
+  border: 18px solid transparent; //Button height
+  border-left-width: $spike-size;
+  border-right-width: $spike-size;
+}
+
+//Orange Button
+.hex-btn.orange{
+  background-color: $color-btn-light;
+  color: white;
+  &::before {
+    border-right-color: $color-btn-light;
+  }
+  &::after {
+    border-left-color: $color-btn-light;
+  }
+}
+
+.hex-btn.orange:hover{
+  background-color: black;
+  &::before {
+    border-right-color: black;
+  }
+  &::after {
+    border-left-color: black;
+  }
+}
+
+//Blue Button
+
+.hex-btn.purple{
+  background-color: $color-btn-dark;
+  color: white;
+  &::before {
+    border-right-color: $color-btn-dark;
+  }
+  &::after {
+    border-left-color: $color-btn-dark;
+  }
+}
+
+.hex-btn.purple:hover{
+  background-color: blue;
+  &::before {
+    border-right-color: blue;
+  }
+  &::after {
+    border-left-color: blue;
+  }
+}
+
+
